@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal JS SDK Advanced Integration - Checkout Flow</title>
+  </head>
+  <body>
+    <label>
+      <input type="radio" name="payment-option" value="paypal" checked>
+      <div id="paypal-mark"></div>
+    </label>
+    <label>
+      <input type="radio" name="payment-option" value="paylater" unchecked>
+      <div id="paylater-mark"></div>
+    </label>
+    <label>
+      <input type="radio" name="payment-option" value="giropay" unchecked>
+      <div id="giropay-mark"></div>
+    </label>
+    
+    <div id="paypal-button-container"></div>
+    <div id="paylater-button-container" class="hidden"></div>
+    <div id="giropay-payfield-container" class="hidden"></div>
+    <div id="giropay-button-container" class="hidden"></div>
+    
+  <!--   <div id="paylater-button-container" class="paylater-button-container"></div>
+    <div id="giropay-button-container" class="giropay-button-container"></div> -->
+<!--     <div id="card-form" class="card_container">
+      <div id="card-name-field-container"></div>
+      <div id="card-number-field-container"></div>
+      <div id="card-expiry-field-container"></div>
+      <div id="card-cvv-field-container"></div>
+      <button id="multi-card-field-button" type="button">Pay now with Card</button>
+    </div> -->
+    <p id="result-message"></p>
+    <script src="https://www.paypal.com/sdk/js?components=buttons,marks,funding-eligibility,payment-fields&buyer-country=DE&client-id=<%= clientId %>&enable-funding=paylater,giropay&currency=EUR&debug=true"></script>
+    <script src="checkout.js"></script>
+  </body>
+</html>
