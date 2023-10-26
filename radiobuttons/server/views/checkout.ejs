@@ -6,23 +6,28 @@
     <title>PayPal JS SDK Advanced Integration - Checkout Flow</title>
   </head>
   <body>
-    <label>
+    <label style="display:block;">
       <input type="radio" name="payment-option" value="paypal" checked>
-      <div id="paypal-mark"></div>
+      <div id="paypal-mark" style="display:inline-block;"></div>
     </label>
-    <label>
+    <label style="display:block;">
       <input type="radio" name="payment-option" value="paylater" unchecked>
-      <div id="paylater-mark"></div>
+      <div id="paylater-mark" style="display:inline-block;"></div>
     </label>
-    <label>
+    <label style="display:block;">
       <input type="radio" name="payment-option" value="giropay" unchecked>
-      <div id="giropay-mark"></div>
+      <div id="giropay-mark" style="display:inline-block;"></div>
+    </label>
+    <label style="display:block;">
+      <input type="radio" name="payment-option" value="card" unchecked>
+      <div id="card-mark" style="display:inline-block;"></div>
     </label>
     
     <div id="paypal-button-container"></div>
     <div id="paylater-button-container" class="hidden"></div>
     <div id="giropay-payfield-container" class="hidden"></div>
     <div id="giropay-button-container" class="hidden"></div>
+    <div id="card-button-container" class="hidden"></div>
     
   <!--   <div id="paylater-button-container" class="paylater-button-container"></div>
     <div id="giropay-button-container" class="giropay-button-container"></div> -->

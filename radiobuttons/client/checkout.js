@@ -104,22 +104,33 @@ document.querySelectorAll('input[name=payment-option]').forEach(function(el) {
           document.querySelector('#paylater-button-container').style.display = 'none';
           document.querySelector('#giropay-payfield-container').style.display = 'none';
           document.querySelector('#giropay-button-container').style.display = 'none';
-          document.querySelector('#paypal-button-container').style.display = 'inline-block';
+          document.querySelector('#paypal-button-container').style.display = 'block';
+          document.querySelector('#card-button-container').style.display = 'none';
       }
 
       // If Card is selected, show the standard continue button
       if (event.target.value === 'paylater') {
-          document.querySelector('#paylater-button-container').style.display = 'inline-block';
+          document.querySelector('#paylater-button-container').style.display = 'block';
           document.querySelector('#paypal-button-container').style.display = 'none';
           document.querySelector('#giropay-payfield-container').style.display = 'none';
           document.querySelector('#giropay-button-container').style.display = 'none';
+          document.querySelector('#card-button-container').style.display = 'none';
       }
 
       if (event.target.value === 'giropay') {
         document.querySelector('#paylater-button-container').style.display = 'none';
         document.querySelector('#paypal-button-container').style.display = 'none';
-        document.querySelector('#giropay-payfield-container').style.display = 'inline-block';
-        document.querySelector('#giropay-button-container').style.display = 'inline-block';
+        document.querySelector('#giropay-payfield-container').style.display = 'block';
+        document.querySelector('#giropay-button-container').style.display = 'block';
+        document.querySelector('#card-button-container').style.display = 'none';
+      }
+
+      if (event.target.value === 'card') {
+        document.querySelector('#paylater-button-container').style.display = 'none';
+        document.querySelector('#paypal-button-container').style.display = 'none';
+        document.querySelector('#giropay-payfield-container').style.display = 'none';
+        document.querySelector('#giropay-button-container').style.display = 'none';
+        document.querySelector('#card-button-container').style.display = 'block';
       }
   });
 });
@@ -127,11 +138,13 @@ document.querySelectorAll('input[name=payment-option]').forEach(function(el) {
 document.querySelector('#paylater-button-container').style.display = 'none';
 document.querySelector('#giropay-payfield-container').style.display = 'none';
 document.querySelector('#giropay-button-container').style.display = 'none';
+document.querySelector('#card-button-container').style.display = 'none';
 
 var FUNDING_SOURCES = [
   paypal.FUNDING.PAYPAL,
   paypal.FUNDING.PAYLATER,
   paypal.FUNDING.GIROPAY,
+  paypal.FUNDING.CARD,
 ];
 
 FUNDING_SOURCES.forEach(function (fundingSource) {
